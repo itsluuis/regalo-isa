@@ -5,6 +5,11 @@ export const hero = {
   bg: `${base}fotos/IMG_20260912_134006_296.jpg`,
 }
 
+export const farewell = {
+  img: `${base}fotos/IMG-20260805-WA0096.jpg`,
+  sound: `${base}audio/6-7.mp3`,
+}
+
 export const tracks = [
   { title: 'Un dia en el cine', msg: 'Te recuerdas el dia donde todos fuimos al cine.', cover: `${base}fotos/IMG-20260802-WA0076.jpg`, color: '#e8a0bf' },
   { title: 'Atardecer nuestro', msg: 'El cerro que no pudo contra nosotros porque tenemos mucha aura.', cover: `${base}fotos/IMG-20260905-WA0232.jpg`, color: '#ff8a5c' },

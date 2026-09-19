@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type MouseEvent } from 'react'
-import { tracks, things, hero } from './fotos'
+import { tracks, things, hero, farewell } from './fotos'
 import MiniPlayer from './MiniPlayer'
 
 function arcPath(cx: number, cy: number, r: number, a0: number, a1: number) {
@@ -101,6 +101,12 @@ export default function App() {
       e.preventDefault()
       e.stopPropagation()
     }
+  }
+
+  const playSound = () => {
+    const a = new Audio(farewell.sound)
+    a.volume = 0.55
+    a.play().catch(() => {})
   }
 
   const changeTrack = (dir: 1 | -1) => {
@@ -586,6 +592,46 @@ export default function App() {
               — te queremos isa ♡
             </p>
             <div className="h-px flex-1 max-w-[80px]" style={{ background: 'linear-gradient(90deg, rgba(232,160,191,0.35), transparent)' }} />
+          </div>
+
+          {/* Foto final con sonido */}
+          <div className="flex flex-col items-center mb-12">
+            <button type="button" onClick={playSound} className="group relative text-left cursor-pointer" aria-label="Presioname para escuchar el sonido">
+              <div
+                className="absolute -inset-10 rounded-full opacity-20 blur-3xl transition-opacity duration-300 group-hover:opacity-40"
+                style={{ background: 'radial-gradient(circle, #e8a0bf 0%, transparent 70%)' }}
+              />
+              <div
+                className="relative w-full max-w-[320px] md:max-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]"
+                style={{ boxShadow: '0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(232,160,191,0.2)' }}
+              >
+                <img
+                  src={farewell.img}
+                  alt="Para Isa"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                  style={{ filter: 'brightness(0.9) contrast(1.02) saturate(1.05)' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0a0f]/70" />
+                <div className="absolute inset-x-0 bottom-5 flex justify-center">
+                  <span
+                    className="px-5 py-2 rounded-full text-sm font-medium text-white bg-[#0a0a0f]/70 backdrop-blur border border-[#e8a0bf]/40 animate-pulse"
+                    style={{ boxShadow: '0 4px 20px rgba(232,160,191,0.25)' }}
+                  >
+                    presióname 🔊
+                  </span>
+                </div>
+              </div>
+              <div className="absolute -top-3 -left-3 w-12 h-12 border-t-2 border-l-2 border-[#e8a0bf] rounded-tl-lg" />
+              <div className="absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-[#e8a0bf] rounded-br-lg" />
+            </button>
+
+            <p
+              className="mt-8 text-[#e8a0bf] text-lg text-center"
+              style={{ fontFamily: 'Fraunces, serif', fontStyle: 'italic' }}
+            >
+              no nos olvides unu
+            </p>
           </div>
 
           {/* Botón volver */}
