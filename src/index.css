@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #0a0a0f;
+  --color-surface: #12121a;
+  --color-card: #1a1a26;
+  --color-accent: #7c6af7;
+  --color-accent-soft: #a99ef5;
+  --color-gold: #d4a85a;
+  --color-muted: #4a4a6a;
+  --color-text: #e8e6f0;
+  --color-text-dim: #8a88a0;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  --disc: 180px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --disc: min(40vw, 600px);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #e8e6f0;
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.12) translate(1.5%, -1.5%); }
+}
+
+.kenburns {
+  animation: kenburns 14s ease-in-out infinite alternate;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-row {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.05);
+}
+
+.scroll-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-row::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+}
+
+.scroll-row::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+}
+
+.scroll-row::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.38);
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadein {
+  animation: fadein 0.25s ease-out both;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-pop {
+  animation: pop 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes eq {
+  0%, 100% { height: 4px; }
+  50% { height: 11px; }
+}
+
+.eq-bar {
+  width: 2.5px;
+  border-radius: 999px;
+  background: #e8a0bf;
+  animation: eq 0.9s ease-in-out infinite;
+}
+
+.eq-bar:nth-child(1) { animation-delay: 0s; }
+.eq-bar:nth-child(2) { animation-delay: 0.25s; }
+.eq-bar:nth-child(3) { animation-delay: 0.5s; }
+
+.ps5-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ps5-card:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 20px 60px rgba(124, 106, 247, 0.3);
+}
+
+.ps5-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124,106,247,0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.ps5-card:hover::before {
+  opacity: 1;
+}

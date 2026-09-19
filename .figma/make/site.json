@@ -1,0 +1,10 @@
+{
+  "description": "Showcase luxury apartments with an interactive gallery, detailed floor plans, and virtual tour options, enhancing the property viewing experience for potential buyers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
