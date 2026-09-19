@@ -1,6 +1,6 @@
-# regalo-isa 💖
+# regalo-isa 
 
-Página tributo para Isa: galería de fotos, videos (estilo PS5), mini reproductor con el soundtrack de Kingdom Hearts II y despedida.
+Página tributo para Isa
 
 ## Requisitos
 
