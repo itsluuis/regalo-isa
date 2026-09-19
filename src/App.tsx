@@ -399,7 +399,6 @@ export default function App() {
                 <h3 className="text-3xl md:text-5xl font-light mt-1" style={{ fontFamily: 'Fraunces, Georgia, serif' }}>
                   {ps5Thing.label}
                 </h3>
-                <p className="text-white/55 text-sm md:text-base mt-1 max-w-md">{ps5Thing.desc}</p>
                 <div className="flex items-center gap-4 mt-4">
                   <button
                     onClick={() => setPs5Modal(true)}
